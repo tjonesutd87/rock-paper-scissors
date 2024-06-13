@@ -6,7 +6,112 @@
     </head>
     <body>
         <script>
-            console.log("hello world");
+
+            // this generates a random number between 1-3 and based on that number it
+            //assigns either rock, paper, or scissors to a variable to return
+            function getComputerChoice() {
+
+                // math random gives us a random number between 0 and 1.
+                // Multiply by 3 then round to whole number to get random number between 0-2.
+                // Add 1 to get random number between 1-3.
+                let choice = Math.floor(Math.random() * 3) + 1;
+            
+                if (choice === 1) {
+                    choice = "rock";
+                }
+                else if (choice === 2) {
+                    choice = "paper";
+                }
+                else {
+                    choice = "scissors"
+                }
+                return choice;
+            }
+            
+            // this function prompts the player for a choice between rock, paper and scissors
+            // converts the input to lowercase, and gives an error if player inputs anything other than rock, paper, or scissors.
+            // Should repeat the prompt until user inputs a valid choice.
+            function getHumanChoice() {
+                let choice;
+                //loops input request until player enters a valid input
+                while (choice !== "rock" && choice !== "paper" && choice !== "scissors") {
+                    choice = prompt("Input choice between rock, paper, or scissors:");
+                    choice = choice.toLowerCase();
+
+                    //prints an alert to screen if input is invalid
+                    if (choice != "rock" && choice !== "paper" && choice !== "scissors") {
+                        alert("Please input a valid value!");
+                    }
+                    else {
+                        return choice;
+                    }
+                }
+
+                
+
+            }
+
+            //create variables for storing player and computer score
+            let humanScore = 0;
+            let computerScore = 0;
+
+            // this function plays a round of rock paper scissors by passing in the getComputerChoice function
+            //and assigning it to computerChoice then passing the humanChoice function and assigning it to humanChoice
+            // finally it compares the two choices then prints a message to say who won the round and increments the winner's score by 1
+            function playRound(humanChoice, computerChoice) {
+                let humanChoice;
+                let computerChoice;
+
+                if (
+                    humanChoice === "rock" && computerChoice === "scissors"
+                    || humanChoice === "paper" && computerChoice === "rock"
+                    || humanChoice === "scissors" && computerChoice === "paper"
+                ) {
+                    alert(`You throw: ${humanChoice}
+                    Computer throws: ${computerChoice}
+                    You win!`)
+                }
+            }
+            
+            // func play round plays a round of rock paper scissors by initializing variables for computer throw and player throw,
+            // calling the random choice and assigning it to computer throw, calling player choice and assigning it to player throw,
+            // then printing a message to say who won the round and increment the winner's score by 1
+            // init player throw
+            // init computer throw
+            // player throw = func get player choice
+            // computer throw = func random choice
+
+            // if player throw equals rock and computer throw equals scissors
+            // or player throw equals scissors and computer throw equals paper
+            // or player throw equals paper and computer throw equals rock
+            //     print message saying you won the round
+            //     increment player score
+            // else
+            //     print message saying computer won round
+            //     increment computer score
+            
+            // func play game runs a loop to play 5 rounds, then prints the winner of the game and the final score. Will continue to run as long as player wants to play again
+            // init play again = true
+            // init player answer
+            // init player score
+            // init computer score
+            // while playagain is true
+            //     player score = 0
+            //     computer score = 0
+            //     loop function play round 5 times
+            //     if player score is greater than computer score
+            //         print message saying you won the game and include the final score
+            //     else
+            //         print message saying the computer won the game and include the final score
+            //     prompt player if they want to play again yes or no and assign to player answer
+            //     convert player answer to lowercase
+            //     if player answer equals yes
+            //         play again = true
+            //     else if player answer does not equal no or yes
+            //         print error saying invalid input and exit
+            //         play again = false
+            //     else
+            //         play again = false
         </script>
     </body>
 </html>
