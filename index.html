@@ -55,9 +55,8 @@
                 let computerScore = 0;
 
                 
-                // this function plays a round of rock paper scissors by passing in the getComputerChoice function
-                // and assigning it to computerChoice then passing the humanChoice function and assigning it to humanChoice
-                // finally it compares the two choices then prints a message to say who won the round and increments the winner's score by 1
+                // this function plays a round of rock paper scissors by taking a humanChoice and computerChoice parameter
+                // and then compares the two choices and prints a message to say who won the round and finally increments the winner's score by 1
                 function playRound(humanChoice, computerChoice) {
                     if (
                         humanChoice === "rock" && computerChoice === "scissors"
@@ -84,10 +83,14 @@ Computer wins the round.`);
                     }
                 }
 
+                // loop playRound function for 5 rounds
                 for (i=1; i <= 5; i++) {
+                    // call the playRound function, passing in getHumanChoice and getComputerChoice functions as arguments
                     playRound(getHumanChoice(), getComputerChoice());
                 }
 
+                // compare humanScore and computerScore and print message with final scores
+                // and a message telling player if they win, lose, or tie
                 if (humanScore > computerScore) {
                     console.log(
                         `You win!
@@ -109,46 +112,6 @@ Computer Score: ${computerScore}`)
             }
 
             playGame();
-            
-            // func play round plays a round of rock paper scissors by initializing variables for computer throw and player throw,
-            // calling the random choice and assigning it to computer throw, calling player choice and assigning it to player throw,
-            // then printing a message to say who won the round and increment the winner's score by 1
-            // init player throw
-            // init computer throw
-            // player throw = func get player choice
-            // computer throw = func random choice
-
-            // if player throw equals rock and computer throw equals scissors
-            // or player throw equals scissors and computer throw equals paper
-            // or player throw equals paper and computer throw equals rock
-            //     print message saying you won the round
-            //     increment player score
-            // else
-            //     print message saying computer won round
-            //     increment computer score
-            
-            // func play game runs a loop to play 5 rounds, then prints the winner of the game and the final score. Will continue to run as long as player wants to play again
-            // init play again = true
-            // init player answer
-            // init player score
-            // init computer score
-            // while playagain is true
-            //     player score = 0
-            //     computer score = 0
-            //     loop function play round 5 times
-            //     if player score is greater than computer score
-            //         print message saying you won the game and include the final score
-            //     else
-            //         print message saying the computer won the game and include the final score
-            //     prompt player if they want to play again yes or no and assign to player answer
-            //     convert player answer to lowercase
-            //     if player answer equals yes
-            //         play again = true
-            //     else if player answer does not equal no or yes
-            //         print error saying invalid input and exit
-            //         play again = false
-            //     else
-            //         play again = false
         </script>
     </body>
 </html>
