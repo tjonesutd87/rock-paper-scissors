@@ -46,32 +46,69 @@
                         return choice;
                     }
                 }
+            }
+
+            function playGame() {
+
+                //create variables for storing player and computer score
+                let humanScore = 0;
+                let computerScore = 0;
 
                 
+                // this function plays a round of rock paper scissors by passing in the getComputerChoice function
+                // and assigning it to computerChoice then passing the humanChoice function and assigning it to humanChoice
+                // finally it compares the two choices then prints a message to say who won the round and increments the winner's score by 1
+                function playRound(humanChoice, computerChoice) {
+                    if (
+                        humanChoice === "rock" && computerChoice === "scissors"
+                        || humanChoice === "paper" && computerChoice === "rock"
+                        || humanChoice === "scissors" && computerChoice === "paper"
+                    ) {
+                        console.log(
+                            `You throw: ${humanChoice}
+Computer throws: ${computerChoice}
+You win the round!`);
+                        humanScore++;
+                    }
+                    else if (humanChoice === computerChoice) {
+                        console.log(
+                            `You throw: ${humanChoice}
+Computer throws: ${computerChoice}
+Tie!`);  
+                    } else {
+                        console.log(
+                        `You throw: ${humanChoice}
+Computer throws: ${computerChoice}
+Computer wins the round.`);
+                        computerScore++;
+                    }
+                }
 
-            }
+                for (i=1; i <= 5; i++) {
+                    playRound(getHumanChoice(), getComputerChoice());
+                }
 
-            //create variables for storing player and computer score
-            let humanScore = 0;
-            let computerScore = 0;
-
-            // this function plays a round of rock paper scissors by passing in the getComputerChoice function
-            //and assigning it to computerChoice then passing the humanChoice function and assigning it to humanChoice
-            // finally it compares the two choices then prints a message to say who won the round and increments the winner's score by 1
-            function playRound(humanChoice, computerChoice) {
-                let humanChoice;
-                let computerChoice;
-
-                if (
-                    humanChoice === "rock" && computerChoice === "scissors"
-                    || humanChoice === "paper" && computerChoice === "rock"
-                    || humanChoice === "scissors" && computerChoice === "paper"
-                ) {
-                    alert(`You throw: ${humanChoice}
-                    Computer throws: ${computerChoice}
-                    You win!`)
+                if (humanScore > computerScore) {
+                    console.log(
+                        `You win!
+Your Score: ${humanScore}
+Computer Score: ${computerScore}`)
+                }
+                else if (humanScore < computerScore) {
+                    console.log(
+                        `You Lose!
+Your Score: ${humanScore}
+Computer Score: ${computerScore}`)
+                }
+                else {
+                    console.log(
+                        `Tie Game!
+Your Score: ${humanScore}
+Computer Score: ${computerScore}`)
                 }
             }
+
+            playGame();
             
             // func play round plays a round of rock paper scissors by initializing variables for computer throw and player throw,
             // calling the random choice and assigning it to computer throw, calling player choice and assigning it to player throw,
