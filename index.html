@@ -91,30 +91,26 @@
                             const computerDisplay = document.getElementById("computerDisplay");
                             playRound(humanChoice, getComputerChoice());
                         }
+                        // compare humanScore and computerScore and print message with final scores
+                        // and a message telling player if they win, lose, or tie
                         else {
                             humanDisplay.textContent = "";
                             computerDisplay.textContent = "";
                             if (humanScore == 5 && humanScore > computerScore) {
                                 display.textContent = "You win!";
                                 score.textContent = `Final Score: You: ${humanScore} | Computer: ${computerScore}`;
-                }
-                else if (computerScore == 5 && humanScore < computerScore) {
-                    display.textContent = "You Lose!";
-                    score.textContent = `Final Score: You: ${humanScore} | Computer: ${computerScore}`;
-                }
-                else {
-                    display.textContent = "Tie Game!";
-                    score.textContent = `Final Score: You: ${humanScore} | Computer: ${computerScore}`
-                }
-            }
+                            }
+                            else if (computerScore == 5 && humanScore < computerScore) {
+                                display.textContent = "You Lose!";
+                                score.textContent = `Final Score: You: ${humanScore} | Computer: ${computerScore}`;
+                            }
+                            else {
+                                display.textContent = "Tie Game!";
+                                score.textContent = `Final Score: You: ${humanScore} | Computer: ${computerScore}`
+                            }
+                        }
                     });
                 });
-
-
-
-                // compare humanScore and computerScore and print message with final scores
-                // and a message telling player if they win, lose, or tie
-
             }
 
             playGame();
